@@ -3,7 +3,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes')
 const User = require('./models/User');
 const Message = require('./models/Message')
-const rooms = ['general', 'tech', 'finance', 'crypto'];
+const rooms = ['general', 'tech', 'games', 'memes'];
 const cors = require('cors');
 
 app.use(express.urlencoded({extended: true}));
@@ -86,7 +86,6 @@ io.on('connection', (socket)=> {
   })
 
 })
-
 
 app.get('/rooms', (req, res)=> {
   res.json(rooms)

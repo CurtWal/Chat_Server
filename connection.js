@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@cluster0.rbdbled.mongodb.net/?retryWrites=true&w=majority`, ()=> {
+mongoose.connect(`${process.env.MONGODB}`, ()=> {
   console.log('connected to mongodb')
 })
