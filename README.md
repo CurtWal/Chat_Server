@@ -12,3 +12,5 @@ Jordan Hobson: Started setting up the css layout helping with the frontend when 
 09/21/22
 
 Curtrick Walton & Jordan Hobson: Fixed profile pictures not showing up when making an account added light/dark mode toggle button.
+
+https://github.com/CurtWal/Chat-frontend frontend
