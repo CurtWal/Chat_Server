@@ -14,15 +14,17 @@ app.use('/users', userRoutes)
 require('./connection')
 
 const server = require('http').createServer(app);
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: `${process.env.SERVER}`,
     methods: ['GET', 'POST']
   }
 })
 
-
+app.get('/', (req, res) => {
+  res.send('Hello')
+})
 async function getLastMessagesFromRoom(room){
   let roomMessages = await Message.aggregate([
     {$match: {to: room}},
