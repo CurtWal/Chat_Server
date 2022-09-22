@@ -17,7 +17,7 @@ const server = require('http').createServer(app);
 const PORT = 5001;
 const io = require('socket.io')(server, {
   cors: {
-    origin: `${process.env.SERVER}`,
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST']
   }
 })
@@ -88,7 +88,7 @@ io.on('connection', (socket)=> {
 })
 
 app.get('/rooms', (req, res)=> {
-  res.json(rooms)
+  res.send(rooms)
 })
 
 

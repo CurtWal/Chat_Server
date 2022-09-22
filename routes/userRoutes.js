@@ -8,7 +8,6 @@ router.post('/', async(req, res)=> {
     console.log(req.body);
     const user = await User.create({name, email, password, picture});
     res.status(201).json(user);
-    res.send('hello world')
   } catch (e) {
     let msg;
     if(e.code == 11000){
